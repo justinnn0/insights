@@ -5,9 +5,9 @@ account: justinnn
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 844447
-bundleId: 2043116
+bundleId: 2043366
 url: https://justinnn.shinyapps.io/Dementia2/
-when: 1556366182.17298
+when: 1556380339.94128
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: 14347-supp-tables2.xls|State-Territory-Dementia.xls|iteration2/ERD-2.pdf|iteration2/usecase.png
