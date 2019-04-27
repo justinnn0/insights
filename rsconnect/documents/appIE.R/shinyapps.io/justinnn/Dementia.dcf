@@ -1,0 +1,13 @@
+name: Dementia
+title: Dementia
+username:
+account: justinnn
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 844292
+bundleId: 1992182
+url: https://justinnn.shinyapps.io/Dementia/
+when: 1554612702.22184
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: State-Territory-Dementia.xls|Untitled.R
