@@ -25,24 +25,6 @@ ui <- fluidPage(setBackgroundColor("#222222"),
   sidebarLayout(
     sidebarPanel(id="sidebar",setBackgroundColor("#222222"),
                  
-                 radioButtons("rbState",  HTML("<h3 style='color:white;'>State or region:</h3>"),
-                              choiceNames = list(
-                                HTML('<img id="img1" src="NSW.png" height=80 px width=80 px"><label style="color:white">NSW</label></img>'),
-                                HTML('<img id="img2" src="VIC.png" height=80 px width=80 px"><label style="color:white">VIC</label></img>'),
-                                HTML('<img id="img3" src="QLD.png" height=80 px width=80 px"><label style="color:white">QLD</label></img>'),
-                                HTML('<img id="img4" src="WA.png" height=80 px width=80 px"><label style="color:white">WA</label></img>'),
-                                HTML('<img id="img5" src="SA.png" height=80 px width=80 px"><label style="color:white">SA</label></img>'),
-                                HTML('<img id="img6" src="TAS.png" height=80 px width=80 px"><label style="color:white">TAS</label></img>'),
-                                HTML('<img id="img7" src="ACT.png" height=80 px width=80 px"><label style="color:white">ACT</label></img>'),
-                                HTML('<img id="img8" src="NT.png" height=80 px width=80 px"><label style="color:white">NT</label></img>'),
-                                HTML('<img id="img9" src="allAu.png" height=80 px width=80 px"><label style="color:white">All</label></img>')
-                                
-                                
-                              ),
-                              choiceValues = list(
-                                "NSW", "Vic", "Qld","WA", "SA", "Tas","ACT","NT","Show all states"
-                              ),selected="NSW"
-                 ),
                  radioButtons("rbreason",  HTML("<h3 style='color:white;'>Reasons for hospital care:</h3>"),
                               choiceNames = list(
                                 
@@ -88,40 +70,25 @@ ui <- fluidPage(setBackgroundColor("#222222"),
     
     mainPanel(
       
-      
-    
-      br(),
-      HTML("<h1 style='color:white'; align='center'>Number of people with dementia in Australia</h1>"),
-      #headerPanel("Number of people with dementia in Australia"), 
-      br(),
-      br(),
-      br(),
-      br(),
-      br(),
-      br(),
-      br(),
-      br(),
-      br(),
-      
-     
-      
-      plotOutput("coolplot"),
-      br(),
-      br(),
-      br(),
-      br(),
-      br(),
-      br(),
-      br(),
-      br(),
     
       
       br(),
       HTML("<h1 style='color:white'; align='center'>Average hospital care costs comparison between people with and without dementia</h1>"),
       br(),
+      br(),
+      br(),
+      textOutput('text1'),
+      tags$head(tags$style("#text1{color: #ADD8E6;
+                                 font-size: 30px;
+                                 font-style: italic;  
+                                 text-align: center
+
+
+                                 }"
+      )
+      ),
       
-      br(),
-      br(),
+  
       
       br(),
       br(),
@@ -146,6 +113,10 @@ ui <- fluidPage(setBackgroundColor("#222222"),
                 )
 
 server <- function(input, output) {
+  #output$placeholder <- renderText({ input$rbreason })
+  
+  output$text1 <- renderText({ paste(input$rbreason) })
+  
   output$coolplot <- renderPlot(
     
     
